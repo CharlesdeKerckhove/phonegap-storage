@@ -24,7 +24,6 @@ var value5 = "Gomez";
 window.localStorage.setItem(key5, value5);
 
 
-var key1 = "Name3";
 var value1 = window.localStorage.getItem(key1);
 
 document.addEventListener("deviceready", onDeviceReady, false);
