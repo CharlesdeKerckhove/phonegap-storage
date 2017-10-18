@@ -1,14 +1,49 @@
-var paused_count =0;
-var resumed_count = 0;
-var launched_count = 0;
+var key1 = "NameOne";
+var value1 = "Chris";
+
+window.localStorage.setItem(key1, value1);
+
+var key2 = "NameTwo";
+var value2 = "TJ";
+
+window.localStorage.setItem(key2, value2);
+
+var key3 = "NameThree";
+var value3 = "Charlie";
+
+window.localStorage.setItem(key3, value3);
+
+var key4 = "NameFour";
+var value4 = "Matt";
+
+window.localStorage.setItem(key4, value4);
+
+var key5 = "Name6";
+var value5 = "Gomez";
+
+window.localStorage.setItem(key5, value5);
+
+
+var key1 = "Name3";
+var value1 = window.localStorage.getItem(key1);
 
 document.addEventListener("deviceready", onDeviceReady, false);
 		
+
+$(document).ready (function(){
+    
+    console.log ("ready");
+    onDeviceReady();
+});
+
+
 	
 function updateDisplay() {
-	$("#launched").text("Application launched: " + launched_count);
-	$("#resumed").text("Application paused: " + paused_count);
-	$("#paused").text("Application resumed: " + resumed_count);
+    
+    var anythingyoulike = window.localStorage.getItem(key3)
+    
+	$("#launched").text("I love: " + anythingyoulike);
+	
 }
 
 
@@ -16,29 +51,7 @@ function updateDisplay() {
 //
     function onDeviceReady() {
 	
-	document.addEventListener("resume", onResume, false);
-	document.addEventListener("pause", onPause, false);
-	
-	launched_count++;
 	updateDisplay();
 	    
-	alert("device ready");
-    }
 
-
-    function onPause() {
-	
-	paused_count++;
-	updateDisplay();
-	    
-	alert("pause");
-    }
-	
-
-    function onResume() {
-		
-	resumed_count++;
-	updateDisplay();
-	    
-	alert("resume");
     }
